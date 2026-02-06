@@ -35,5 +35,6 @@ jobs:
           port: ${{ secrets.REMOTE_PORT }}
           script: |
             cd ${{ secrets.REMOTE_TARGET }}
-            whoami
+            mv src/index.php public
+            ls -all public
             ls -all
