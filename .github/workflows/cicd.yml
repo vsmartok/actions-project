@@ -45,5 +45,6 @@ jobs:
             mv tmp_sources/src/* public
             rm -Rf tmp_sources
             rm sources.zip
+            chown -R '${{ secrets.REMOTE_USERNAME }}:www-data' public
             ls -all public
             ls -all
