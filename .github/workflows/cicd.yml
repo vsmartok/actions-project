@@ -13,11 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: View files
-        run: ls -la src
+      - name: View files before archiving
+        run: ls -la
 
       - name: Create zip archive
         run: zip -r sources.zip src
+
+      - name: View files after archiving
+        run: ls -la
 
       - name: Sync files
         uses: appleboy/scp-action@v1
