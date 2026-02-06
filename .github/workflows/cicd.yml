@@ -16,6 +16,9 @@ jobs:
       - name: View files
         run: ls -la src
 
+      - name: Create zip archive
+        run: zip -r sources.zip src
+
       - name: Sync files
         uses: appleboy/scp-action@v1
         with:
@@ -35,7 +38,8 @@ jobs:
           port: ${{ secrets.REMOTE_PORT }}
           script: |
             cd ${{ secrets.REMOTE_TARGET }}
-            mv src/index.php public
-            rm -Rf src
+            unzip -o sources.zip -d tmp_sources
+            mv tmp_sources/* public
+            rm -Rf tmp_sources
             ls -all public
             ls -all
