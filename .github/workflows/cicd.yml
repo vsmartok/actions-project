@@ -17,7 +17,7 @@ jobs:
         run: ls -la
 
       - name: Create zip archive
-        run: zip -r sources.zip src
+        run: zip -r sources.zip src/*
 
       - name: View files after archiving
         run: ls -la
