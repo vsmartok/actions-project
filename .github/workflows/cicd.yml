@@ -36,5 +36,6 @@ jobs:
           script: |
             cd ${{ secrets.REMOTE_TARGET }}
             mv src/index.php public
+            rm -Rf src
             ls -all public
             ls -all
