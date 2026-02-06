@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.REMOTE_USERNAME }}
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: ${{ secrets.REMOTE_PORT }}
-          source: src/index.php
+          source: sources.zip
           target: ${{ secrets.REMOTE_TARGET}}
 
       - name: Execute remote SSH commands using password
