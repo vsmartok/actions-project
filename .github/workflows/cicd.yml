@@ -42,7 +42,7 @@ jobs:
           script: |
             cd ${{ secrets.REMOTE_TARGET }}
             unzip -o sources.zip -d tmp_sources
-            mv tmp_sources/src* public
+            mv tmp_sources/src/* public
             rm -Rf tmp_sources
             rm sources.zip
             ls -all public
